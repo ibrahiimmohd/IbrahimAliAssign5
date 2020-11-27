@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ibrahim.ali.s301022172.ui.HomeFragment.IbHome"
+        android:label="@string/menu_home"
+        tools:layout="@layout/Ib_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="ibrahim.ali.s301022172.ui.AliFragment.AlSrv"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/al_srv" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="ibrahim.ali.s301022172.ui.SettingsFragment.AliSet"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/ali_set" />
+</navigation>
