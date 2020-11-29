@@ -9,17 +9,23 @@
         android:id="@+id/nav_home"
         android:name="ibrahim.ali.s301022172.ui.HomeFragment.IbHome"
         android:label="@string/menu_home"
-        tools:layout="@layout/Ib_home" />
+        tools:layout="@layout/ib_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_ibrahim"
+        android:name="ibrahim.ali.s301022172.ui.IbrahimFragment.IbrDown"
+        android:label="@string/menu_ibrahim"
+        tools:layout="@layout/ibr_down" />
+
+    <fragment
+        android:id="@+id/nav_ali"
         android:name="ibrahim.ali.s301022172.ui.AliFragment.AlSrv"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_ali"
         tools:layout="@layout/al_srv" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_settings"
         android:name="ibrahim.ali.s301022172.ui.SettingsFragment.AliSet"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_settings"
         tools:layout="@layout/ali_set" />
 </navigation>

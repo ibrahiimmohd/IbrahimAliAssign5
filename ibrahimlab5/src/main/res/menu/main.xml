@@ -13,4 +13,11 @@
         android:icon="@drawable/ic_baseline_my_location_24"
         android:title="@string/action_location"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_sms"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_sms_24"
+        android:title="@string/action_location"
+        app:showAsAction="always" />
 </menu>
