@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -54,14 +55,13 @@ public class IbrDown extends Fragment {
         Button button= root.findViewById(R.id.asyncTask);
         imageView = root.findViewById(R.id.image);
 
-        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
-
         DIR_NAME = "Assignment5 Images";
-
         filename = "filename.jpg";
 
         button.setOnClickListener(v -> {
+
+            //ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+            //ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},1);
 
             File imageExist =
                     new File(Environment
@@ -99,6 +99,12 @@ public class IbrDown extends Fragment {
 
                 dm.enqueue(request);
 
+                Toast toast = Toast.makeText(getContext(), "Download complete", Toast.LENGTH_SHORT);
+                toast.show();
+
+            }else{
+                Toast toast = Toast.makeText(getContext(), "The image has been already downloaded", Toast.LENGTH_SHORT);
+                toast.show();
             }
 
             String photoPath = Environment.DIRECTORY_PICTURES + File.separator + DIR_NAME + File.separator + filename;
@@ -147,16 +153,16 @@ public class IbrDown extends Fragment {
             return bmImg;
         }
 
-//        @Override
-//        protected void onPostExecute(Bitmap bitmap) {
-//            super.onPostExecute(bitmap);
-//            if(imageView!=null) {
-//                p.hide();
-//                imageView.setImageBitmap(bitmap);
-//            }else {
-//                p.show();
-//            }
-//        }
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            if(imageView!=null) {
+                p.hide();
+                //imageView.setImageBitmap(bitmap);
+            }else {
+                p.show();
+            }
+        }
     }
 }
 
