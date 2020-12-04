@@ -17,7 +17,7 @@
         android:layout_marginBottom="30dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:text="Ali"/>
+        android:text="@string/ibrahimLastNameStr"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="44dp"
-                android:text="Zip Code" />
+                android:text="@string/ibrahimZipCodeStr" />
 
             <EditText
                 android:id="@+id/ibrahimZipcodeInsert"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="35dp"
-                android:hint="Enter ZIP code"
+                android:hint="@string/ibrahimZipCodeHintStr"
                 android:ems="10"
                 android:maxLength="5"
                 android:inputType="number" />
@@ -52,7 +52,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_marginStart="8dp"
-        android:text="Web Services" />
+        android:text="@string/ibrahimWebServicesStr" />
 
     <TextView
         android:id="@+id/ibrahimWeatherDisplay"

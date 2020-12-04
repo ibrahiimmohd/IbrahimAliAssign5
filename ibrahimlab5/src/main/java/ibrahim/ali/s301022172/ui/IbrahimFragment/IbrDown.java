@@ -42,8 +42,8 @@ public class IbrDown extends Fragment {
         View root = inflater.inflate(R.layout.ibr_down, container, false);
         final TextView textView = root.findViewById(R.id.Ibrahim);
 
-        Button button= root.findViewById(R.id.asyncTask);
-        imageView = root.findViewById(R.id.image);
+        Button button= root.findViewById(R.id.ibrahimDownloadBtn);
+        imageView = root.findViewById(R.id.ibrahimImg);
 
         DIR_NAME = "Assignment5 Images";
         filename = "filename.jpg";

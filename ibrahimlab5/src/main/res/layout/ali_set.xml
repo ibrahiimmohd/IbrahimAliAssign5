@@ -10,10 +10,10 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/ibrahimSelectColorTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please select Home Screen background"
+        android:text="@string/ibrahimBackgroundColorQStr"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
@@ -28,26 +28,26 @@
             android:id="@+id/ibrahimYellowRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Yellow" />
+            android:text="@string/ibrahimYellowStr" />
 
         <RadioButton
             android:id="@+id/ibrahimRedRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Red" />
+            android:text="@string/ibrahimRedStr" />
 
         <RadioButton
             android:id="@+id/ibrahimGreenRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Green" />
+            android:text="@string/ibrahimGreenStr" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ibrahimSelectTimeFormatTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please select clock format"
+        android:text="@string/ibrahimTimeFormatQStr"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
@@ -62,21 +62,21 @@
             android:id="@+id/ibrahimHr12RadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="12hr" />
+            android:text="@string/ibrahim12hrStr" />
 
         <RadioButton
             android:id="@+id/ibrahimHr24RadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="24hr" />
+            android:text="@string/ibrahim24hrStr" />
 
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ibrahimSelectFontTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please select dropdown font size"
+        android:text="@string/ibrahimSelectFontQStr"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
@@ -96,12 +96,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Portrait Mode" />
+        android:text="@string/ibrahimPortraitStr" />
 
     <Button
         android:id="@+id/ibrahimSharedPrefSaveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save"
+        android:text="@string/ibrahimSaveStr"
         android:layout_marginTop="20dp" />
 </LinearLayout>

@@ -14,6 +14,24 @@
     <string name="menu_settings">Settings</string>
 
     <string name="prompt">Please Select</string>
+    <string name="ibrahimLastNameStr">Ali</string>
+    <string name="ibrahimZipCodeStr">Zip Code</string>
+    <string name="ibrahimZipCodeHintStr">Enter ZIP code</string>
+    <string name="ibrahimWebServicesStr">Web Services</string>
+    <string name="ibrahimBackgroundColorQStr">Please select Home Screen background color</string>
+    <string name="ibrahimTimeFormatQStr">Please select clock format</string>
+    <string name="ibrahimGreenStr">Green</string>
+    <string name="ibrahimRedStr">Red</string>
+    <string name="ibrahimYellowStr">Yellow</string>
+    <string name="ibrahim12hrStr">12hr</string>
+    <string name="ibrahim24hrStr">24hr</string>
+    <string name="ibrahimSelectFontQStr">Please select dropdown font size</string>
+    <string name="ibrahimPortraitStr">Portrait Mode</string>
+    <string name="ibrahimSaveStr">Save</string>
+    <string name="ibrahimFullNameStr">Ibrahim Ali</string>
+    <string name="ibrahimStudentNumStr">301022172</string>
+    <string name="ibrahimFirstNameTv">Ibrahim</string>
+    <string name="ibrahimDownloadBtnStr">Download</string>
 
     <string-array name="courses_array">
         <item>Netowrking for Sftwr Dvlprs</item>
