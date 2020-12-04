@@ -11,6 +11,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,11 +44,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static androidx.core.content.PermissionChecker.PERMISSION_GRANTED;
+
 public class IbrahimActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     ImageButton homeImgBtn;
+    DrawerLayout drawer;
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
+    LocationManager mLocationManager;
+    Boolean checkPermission;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +71,7 @@ public class IbrahimActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -108,18 +116,23 @@ public class IbrahimActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_help:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.centennialcollege.com"));
                 startActivity(browserIntent);
                 return true;
             case R.id.action_location:
-
-
+                checkPermission = checkSendSmsPermission("LOCATION");
+                mLocationManager = (LocationManager) getSystemService(getApplicationContext().LOCATION_SERVICE);
+                if (checkPermission && mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    getLastLocation();
+                }else{
+                    Toast.makeText(this, "Please check location settings", Toast.LENGTH_SHORT).show();
+                }
                 return true;
             case R.id.action_sms:
-                Boolean check = checkSendSmsPermission();
-                if(check){
+                checkPermission = checkSendSmsPermission("SMS");
+                if (checkPermission) {
                     sendSMS("6472864816", "Hello There!");
                 }
                 return true;
@@ -147,48 +160,46 @@ public class IbrahimActivity extends AppCompatActivity {
                 new Intent(DELIVERED), 0);
 
         //---when the SMS has been sent---
-        registerReceiver(new BroadcastReceiver(){
+        registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
+                switch (getResultCode()) {
                     case Activity.RESULT_OK:
-                        Toast.makeText(getBaseContext(), "SMS sent",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "SMS sent", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                     case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
-                        Toast.makeText(getBaseContext(), "Generic failure",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "Generic failure", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                     case SmsManager.RESULT_ERROR_NO_SERVICE:
-                        Toast.makeText(getBaseContext(), "No service",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "No service", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                     case SmsManager.RESULT_ERROR_NULL_PDU:
-                        Toast.makeText(getBaseContext(), "Null PDU",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "Null PDU", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                     case SmsManager.RESULT_ERROR_RADIO_OFF:
-                        Toast.makeText(getBaseContext(), "Radio off",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "Radio off", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                 }
             }
         }, new IntentFilter(SENT));
 
         //---when the SMS has been delivered---
-        registerReceiver(new BroadcastReceiver(){
+        registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context arg0, Intent arg1) {
-                switch (getResultCode())
-                {
+                switch (getResultCode()) {
                     case Activity.RESULT_OK:
-                        Toast.makeText(getBaseContext(), "SMS delivered",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "SMS delivered", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                     case Activity.RESULT_CANCELED:
-                        Toast.makeText(getBaseContext(), "SMS not delivered",
-                                Toast.LENGTH_LONG).show();
+                        Snackbar.make(drawer, "SMS not delivered", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
                         break;
                 }
             }
@@ -199,18 +210,52 @@ public class IbrahimActivity extends AppCompatActivity {
     }
 
     //checkSendSmsPermission function
-    private Boolean checkSendSmsPermission() {
-        int hasWriteContactsPermission = 0;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            hasWriteContactsPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+    private Boolean checkSendSmsPermission(String permission) {
+        if (permission.equals("SMS")) {
+            int hasWriteContactsPermission = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                hasWriteContactsPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
 
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.SEND_SMS},
-                        REQUEST_CODE_ASK_PERMISSIONS);
-                return false;
+                if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.SEND_SMS},
+                            REQUEST_CODE_ASK_PERMISSIONS);
+                    return false;
+                }
+            }
+
+        } else if (permission.equals("LOCATION")) {
+            int hasWriteContactsPermission = 0;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                hasWriteContactsPermission = ContextCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION);
+
+                if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                            REQUEST_CODE_ASK_PERMISSIONS);
+                    return false;
+                }
             }
         }
-
         return true;
+    }
+
+    private void getLastLocation() {
+        try {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+                return;
+            }else{
+                Location locationGPS = mLocationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (locationGPS != null) {
+                    double latitude = locationGPS.getLatitude();
+                    double longitude = locationGPS.getLongitude();
+                    Snackbar.make(drawer,String.format("Latitude: %.4f & Longitude: %.4f", latitude, longitude), Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this, "Location Not Found", Toast.LENGTH_SHORT).show();
+        }
     }
 }
