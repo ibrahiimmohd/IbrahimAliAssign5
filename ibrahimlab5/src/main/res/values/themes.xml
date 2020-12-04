@@ -22,4 +22,17 @@
     <style name="Theme.IbrahimLab5.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.IbrahimLab5.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="FontSize12">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="FontSize13">
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="FontSize14">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="FontSize15">
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>

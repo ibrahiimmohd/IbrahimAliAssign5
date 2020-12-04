@@ -1,9 +1,16 @@
 package ibrahim.ali.s301022172.ui.HomeFragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +19,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+
+import org.w3c.dom.Text;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -26,13 +37,13 @@ import ibrahim.ali.s301022172.R;
 public class IbHome extends Fragment implements AdapterView.OnItemSelectedListener{
 
     Spinner spinner;
+    String hourFormat;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.ib_home, container, false);
-        final TextView textView = root.findViewById(R.id.tvIbrahim);
 
         spinner = (Spinner) root.findViewById(R.id.ibrahimSpinnerInsert);
         spinner.setOnItemSelectedListener(this);
@@ -50,6 +61,54 @@ public class IbHome extends Fragment implements AdapterView.OnItemSelectedListen
         dateTv.setText(date);
 
         TextView timeTv = (TextView) root.findViewById(R.id.ibrahimCurrentTime);
+        TextView fullnameTv = (TextView) root.findViewById(R.id.tvIbrahim);
+        TextView studentNumTv = (TextView) root.findViewById(R.id.tv301022172);
+
+
+        final SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(getContext());
+
+        String color_selection = sharedPreferences.getString("color_selection","empty");
+        String hour_selection = sharedPreferences.getString("hour_selection","empty");
+        String font_selection = sharedPreferences.getString("font_selection","empty");
+        Boolean portrait_selection = sharedPreferences.getBoolean("portrait_selection",false);
+
+        Log.d("Settings",color_selection + " " + hour_selection + " " + font_selection + " " +portrait_selection);
+
+        switch(color_selection){
+            case "yellow":
+                root.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.yellow));
+                break;
+            case "red":
+                root.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.red));
+                break;
+            case "green":
+                root.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.green));
+                break;
+        }
+
+        timeTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+        dateTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+        fullnameTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+        studentNumTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+
+        if(portrait_selection){
+            getActivity().setRequestedOrientation(
+                    ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            Toast.makeText(getContext(),"Portriat Mode is On",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getContext(),"Portriat Mode is Off",Toast.LENGTH_SHORT).show();
+        }
+
+        switch(hour_selection){
+            case "12":
+                hourFormat = "hh:mm:ss a";
+                break;
+            case "24":
+                hourFormat = "HH:mm:ss";
+                break;
+        }
+
         Thread thread = new Thread(){
             @Override
             public void run(){
@@ -60,7 +119,7 @@ public class IbHome extends Fragment implements AdapterView.OnItemSelectedListen
                             @Override
                             public void run() {
                                 Calendar calendar = Calendar.getInstance();
-                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm:ss a");
+                                SimpleDateFormat simpleDateFormat = new SimpleDateFormat(hourFormat);
                                 String currenttime = simpleDateFormat.format(calendar.getTime());
                                 timeTv.setText(currenttime);
                             }
@@ -71,6 +130,7 @@ public class IbHome extends Fragment implements AdapterView.OnItemSelectedListen
                 }
             }
         };
+
         thread.start();
 
         return root;

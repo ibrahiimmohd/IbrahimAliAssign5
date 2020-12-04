@@ -13,9 +13,7 @@
     <string name="menu_ali">Ali</string>
     <string name="menu_settings">Settings</string>
 
-
     <string name="prompt">Please Select</string>
-
 
     <string-array name="courses_array">
         <item>Netowrking for Sftwr Dvlprs</item>
@@ -24,5 +22,12 @@
         <item>Data Structures and Algrithms</item>
         <item>Linear Algebra &amp; Statistics</item>
         <item>Mobile Application Development</item>
+    </string-array>
+
+    <string-array name="fonts_array">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 </resources>

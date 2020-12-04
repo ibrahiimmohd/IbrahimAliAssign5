@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.SettingsFragment.AliSet"
+    android:background="@color/lightGreen"
     android:orientation="vertical">
 
 
@@ -80,42 +81,22 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+    <Spinner
+        android:id="@+id/ibrahimFontSizeSpinner"
+        style="@android:style/Widget.Spinner"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:prompt="@string/prompt" />
 
-            <RadioButton
-                android:id="@+id/ibrahimFont12RadioBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12"
-                android:layout_marginRight="5dp"/>
-
-            <RadioButton
-                android:id="@+id/ibrahimFont13RadioBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="13"
-                android:layout_marginRight="5dp"/>
-
-            <RadioButton
-                android:id="@+id/ibrahimFont14RadioBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="14"
-                android:layout_marginRight="5dp"/>
-
-            <RadioButton
-                android:id="@+id/ibrahimFont15RadioBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="15"
-                android:layout_marginRight="5dp"/>
-
-        </RadioGroup>
-
+    <Switch
+        android:id="@+id/ibrahimPortraitMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Portrait Mode" />
 
     <Button
         android:id="@+id/ibrahimSharedPrefSaveBtn"
