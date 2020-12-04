@@ -1,0 +1,62 @@
+<!--
+    * Full Name: Ibrahim Ali
+    * Student ID: 301022172
+    * Section: COMP 304 - 002
+-->
+<resources>
+    <string name="app_name">ExploreServicesApp</string>
+    <string name="navigation_drawer_open">Ouvrir le tiroir de navigation</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
+    <string name="nav_header_title">Accueil</string>
+    <string name="nav_header_desc">En-tête de navigation</string>
+    <string name="action_help">Aidez-moi</string>
+    <string name="action_location">Emplacement</string>
+
+    <string name="menu_home">Accueil</string>
+    <string name="menu_ibrahim">Ibrahim</string>
+    <string name="menu_ali">Ali</string>
+    <string name="menu_settings">Réglages</string>
+
+    <string name="prompt">Veuillez sélectionner</string>
+    <string name="ibrahimLastNameStr">Ali</string>
+    <string name="ibrahimZipCodeStr">Code postal</string>
+    <string name="ibrahimZipCodeHintStr">Entrer le code postal</string>
+    <string name="ibrahimWebServicesStr">Services Web</string>
+    <string name="ibrahimBackgroundColorQStr">Veuillez sélectionner la couleur d\'arrière-plan de l\'écran d\'accueil</string>
+    <string name="ibrahimTimeFormatQStr">Veuillez sélectionner le format de l\'horloge</string>
+    <string name="ibrahimGreenStr">Vert</string>
+    <string name="ibrahimRedStr">rouge</string>
+    <string name="ibrahimYellowStr">Jaune</string>
+    <string name="ibrahim12hrStr">12hr</string>
+    <string name="ibrahim24hrStr">24hr</string>
+    <string name="ibrahimSelectFontQStr">Veuillez sélectionner la taille de la police déroulante</string>
+    <string name="ibrahimPortraitStr">Mode portrait</string>
+    <string name="ibrahimSaveStr">sauvegarder</string>
+    <string name="ibrahimFullNameStr">Ibrahim Ali</string>
+    <string name="ibrahimStudentNumStr">301022172</string>
+    <string name="ibrahimFirstNameTv">Ibrahim</string>
+    <string name="ibrahimDownloadBtnStr">Télécharger</string>
+    <string name="zipCodeErrorStr">Veuillez saisir un code postal valide</string>
+    <string name="nameStr">\"\nNom: \"</string>
+    <string name="imgDownloadStr">L\'image a déjà été téléchargée</string>
+    <string name="loadingMsgStr">Veuillez patienter ... Il est en cours de téléchargement</string>
+    <string name="downloadCompleteStr">Téléchargement complet</string>
+    <string name="zipCodeNumErrorStr">Veuillez insérer 5 chiffres</string>
+    <string name="backPressStr">Êtes-vous sûr de vouloir quitter?</string>
+
+    <string-array name="courses_array">
+        <item>Netowrking for Sftwr Dvlprs</item>
+        <item>Software Testing &amp; Quality</item>
+        <item>Programming 3</item>
+        <item>Data Structures and Algrithms</item>
+        <item>Linear Algebra &amp; Statistics</item>
+        <item>Mobile Application Development</item>
+    </string-array>
+
+    <string-array name="fonts_array">
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+</resources>

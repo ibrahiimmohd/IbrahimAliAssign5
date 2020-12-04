@@ -6,6 +6,9 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="ibrahimTxtSizeType1">30sp</dimen>
+    <dimen name="ibrahimTxtSizeType2">60px</dimen>
+    <dimen name="ibrahimTxtSizeType3">50px</dimen>
 
     <dimen name="font8">8dp</dimen>
     <dimen name="font10">10dp</dimen>

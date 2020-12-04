@@ -1,3 +1,8 @@
+/**
+ * Full Name: Ibrahim Ali
+ * Student ID: 301022172
+ * Section: COMP 304 - 002
+ * */
 package ibrahim.ali.s301022172.ui.AliFragment;
 
 import android.os.AsyncTask;
@@ -44,7 +49,7 @@ public class AlSrv extends Fragment {
             zipCode = (EditText) root.findViewById(R.id.ibrahimZipcodeInsert);
 
             if(zipCode.getText().toString().isEmpty() == true || zipCode.getText().toString().length() != 5){
-                zipCode.setError("Please Insert 5 digits");
+                zipCode.setError(getString(R.string.zipCodeNumErrorStr));
             }else{
                 String url = "https://api.openweathermap.org/data/2.5/weather?zip="+zipCode.getText().toString()+",us&appid=38bad841f49c781c1a8f6a2b957b35bc";
                 new ReadJSONFeedTask().execute(url);
@@ -95,7 +100,7 @@ public class AlSrv extends Fragment {
                 Log.d("URL",result);
 
                 JSONObject weatherJson = new JSONObject(result);
-                String strResults="Weather\n";
+                String strResults="\n";
 
                 //
                 JSONObject jsonObject1= weatherJson.getJSONObject("coord");
@@ -108,15 +113,15 @@ public class AlSrv extends Fragment {
 
                 //
                 String jsonObject3= weatherJson.getString("name");
-                strResults +="\nName: "+ jsonObject3;
+                strResults +=getString(R.string.nameStr)+ jsonObject3;
 
-                strResults +="\nZip code: "+ zipCode.getText().toString();
+                strResults +="\n" + getString(R.string.ibrahimZipCodeStr) + zipCode.getText().toString();
 
                 txtDisplayWeather.setText(strResults);
 
             } catch (Exception e) {
                 e.printStackTrace();
-                zipCode.setError("Please enter valid zip code");
+                zipCode.setError(getString(R.string.zipCodeErrorStr));
             }
         }
     }

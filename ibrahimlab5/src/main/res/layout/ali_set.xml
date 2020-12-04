@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ibrahimBackgroundColorQStr"
         android:gravity="center"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
@@ -28,18 +29,21 @@
             android:id="@+id/ibrahimYellowRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/RadioDisplayIbrahim"
             android:text="@string/ibrahimYellowStr" />
 
         <RadioButton
             android:id="@+id/ibrahimRedRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/RadioDisplayIbrahim"
             android:text="@string/ibrahimRedStr" />
 
         <RadioButton
             android:id="@+id/ibrahimGreenRadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/RadioDisplayIbrahim"
             android:text="@string/ibrahimGreenStr" />
     </RadioGroup>
 
@@ -49,6 +53,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ibrahimTimeFormatQStr"
         android:gravity="center"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 
@@ -62,12 +67,14 @@
             android:id="@+id/ibrahimHr12RadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/RadioDisplayIbrahim"
             android:text="@string/ibrahim12hrStr" />
 
         <RadioButton
             android:id="@+id/ibrahimHr24RadioBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/RadioDisplayIbrahim"
             android:text="@string/ibrahim24hrStr" />
 
     </RadioGroup>
@@ -78,6 +85,7 @@
         android:layout_height="wrap_content"
         android:text="@string/ibrahimSelectFontQStr"
         android:gravity="center"
+        android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"/>
 

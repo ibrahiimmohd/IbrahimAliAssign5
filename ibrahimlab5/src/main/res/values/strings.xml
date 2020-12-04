@@ -1,9 +1,13 @@
+<!--
+    * Full Name: Ibrahim Ali
+    * Student ID: 301022172
+    * Section: COMP 304 - 002
+-->
 <resources>
-    <string name="app_name">IbrahimLab5</string>
+    <string name="app_name">ExploreServicesApp</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Home</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_help">Help</string>
     <string name="action_location">Location</string>
@@ -32,6 +36,13 @@
     <string name="ibrahimStudentNumStr">301022172</string>
     <string name="ibrahimFirstNameTv">Ibrahim</string>
     <string name="ibrahimDownloadBtnStr">Download</string>
+    <string name="zipCodeErrorStr">Please enter valid zip code</string>
+    <string name="nameStr">\"\nName: \"</string>
+    <string name="imgDownloadStr">The image has been already downloaded</string>
+    <string name="loadingMsgStr">Please wait...It is downloading</string>
+    <string name="downloadCompleteStr">Download complete</string>
+    <string name="zipCodeNumErrorStr">Please Insert 5 digits</string>
+    <string name="backPressStr">Are you sure you want to exit?</string>
 
     <string-array name="courses_array">
         <item>Netowrking for Sftwr Dvlprs</item>

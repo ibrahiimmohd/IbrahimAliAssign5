@@ -1,3 +1,8 @@
+/**
+ * Full Name: Ibrahim Ali
+ * Student ID: 301022172
+ * Section: COMP 304 - 002
+ * */
 package ibrahim.ali.s301022172;
 
 import android.Manifest;
@@ -18,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -242,5 +248,38 @@ public class IbrahimActivity extends AppCompatActivity {
             e.printStackTrace();
             Toast.makeText(this, "Location Not Found", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //If back btn pressed, display alert dialog
+    @Override
+    public void onBackPressed(){
+        ImageView image = new ImageView(this);
+        image.setImageResource(R.drawable.bird1);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(R.string.backPressStr);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.app_name);
+        builder.setView(image);
+
+        builder.setPositiveButton(
+                "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        System.exit(1);
+                    }
+                });
+
+        builder.setNegativeButton(
+                "No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 }

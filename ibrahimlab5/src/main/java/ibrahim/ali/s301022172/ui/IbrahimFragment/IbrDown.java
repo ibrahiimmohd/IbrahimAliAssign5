@@ -1,3 +1,8 @@
+/**
+ * Full Name: Ibrahim Ali
+ * Student ID: 301022172
+ * Section: COMP 304 - 002
+ * */
 package ibrahim.ali.s301022172.ui.IbrahimFragment;
 
 import android.app.DownloadManager;
@@ -94,7 +99,7 @@ public class IbrDown extends Fragment {
                 dm.enqueue(request);
 
             }else{
-                Toast toast = Toast.makeText(getContext(), "The image has been already downloaded", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), R.string.imgDownloadStr, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -155,7 +160,7 @@ public class IbrDown extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             p=new ProgressDialog(getContext());
-            p.setMessage("Please wait...It is downloading");
+            p.setMessage(getString(R.string.loadingMsgStr));
             p.setIndeterminate(false);
             p.setCancelable(false);
             p.show();
@@ -172,7 +177,7 @@ public class IbrDown extends Fragment {
             if(imageView!=null) {
                 p.hide();
                 imageView.setImageBitmap(loadImageBitmap(getContext(), filename));
-                Toast toast = Toast.makeText(getContext(), "Download complete", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), R.string.downloadCompleteStr, Toast.LENGTH_SHORT);
                 toast.show();
             }else {
                 p.show();

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TxtDisplayIbrahim">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/ibrahimTxtSizeType1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="RadioDisplayIbrahim">
+        <item name="android:textSize">@dimen/ibrahimTxtSizeType3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="TxtDisplayAli">
+        <item name="android:textSize">@dimen/ibrahimTxtSizeType3</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="TxtDisplay">
+        <item name="android:textSize">@dimen/ibrahimTxtSizeType1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif-condensed-light</item>
+    </style>
+</resources>
