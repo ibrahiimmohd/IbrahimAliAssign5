@@ -19,7 +19,7 @@
 
     <string name="prompt">Please Select</string>
     <string name="ibrahimLastNameStr">Ali</string>
-    <string name="ibrahimZipCodeStr">Zip Code</string>
+    <string name="ibrahimZipCodeStr">Zip Code: </string>
     <string name="ibrahimZipCodeHintStr">Enter ZIP code</string>
     <string name="ibrahimWebServicesStr">Web Services</string>
     <string name="ibrahimBackgroundColorQStr">Please select Home Screen background color</string>

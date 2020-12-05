@@ -19,7 +19,7 @@
 
     <string name="prompt">Veuillez sélectionner</string>
     <string name="ibrahimLastNameStr">Ali</string>
-    <string name="ibrahimZipCodeStr">Code postal</string>
+    <string name="ibrahimZipCodeStr">Code postal: </string>
     <string name="ibrahimZipCodeHintStr">Entrer le code postal</string>
     <string name="ibrahimWebServicesStr">Services Web</string>
     <string name="ibrahimBackgroundColorQStr">Veuillez sélectionner la couleur d\'arrière-plan de l\'écran d\'accueil</string>
