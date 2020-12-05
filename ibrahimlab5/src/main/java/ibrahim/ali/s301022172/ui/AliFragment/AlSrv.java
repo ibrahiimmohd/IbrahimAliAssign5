@@ -109,13 +109,13 @@ public class AlSrv extends Fragment {
 
                 //
                 JSONObject jsonObject2= weatherJson.getJSONObject("main");
-                strResults +="\nHumidity: "+jsonObject2.getString("humidity");
+                strResults +="\n" + getString(R.string.ibrahimHumidityStr)+" "+ jsonObject2.getString("humidity");
 
                 //
                 String jsonObject3= weatherJson.getString("name");
-                strResults +=getString(R.string.nameStr)+ jsonObject3;
+                strResults +="\n" + getString(R.string.nameStr)+" "+ jsonObject3;
 
-                strResults +="\n" + getString(R.string.ibrahimZipCodeStr) + zipCode.getText().toString();
+                strResults +="\n" + getString(R.string.ibrahimZipCodeStr)+" "+ zipCode.getText().toString();
 
                 txtDisplayWeather.setText(strResults);
 

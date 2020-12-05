@@ -38,7 +38,10 @@
     <string name="ibrahimFirstNameTv">Ibrahim</string>
     <string name="ibrahimDownloadBtnStr">Download</string>
     <string name="zipCodeErrorStr">Please enter valid zip code</string>
-    <string name="nameStr">\"\nName: \"</string>
+    <string name="nameStr">Name:</string>
+    <string name="ibrahimHumidityStr">Humidity:</string>
+
+
     <string name="imgDownloadStr">The image has been already downloaded</string>
     <string name="loadingMsgStr">Please wait...It is downloading</string>
     <string name="downloadCompleteStr">Download complete</string>

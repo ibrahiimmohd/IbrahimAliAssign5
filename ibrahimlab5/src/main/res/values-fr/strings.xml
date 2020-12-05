@@ -38,13 +38,14 @@
     <string name="ibrahimFirstNameTv">Ibrahim</string>
     <string name="ibrahimDownloadBtnStr">Télécharger</string>
     <string name="zipCodeErrorStr">Veuillez saisir un code postal valide</string>
-    <string name="nameStr">\"\nNom: \"</string>
+    <string name="nameStr">\nNom: </string>
     <string name="imgDownloadStr">L\'image a déjà été téléchargée</string>
     <string name="loadingMsgStr">Veuillez patienter ... Il est en cours de téléchargement</string>
     <string name="downloadCompleteStr">Téléchargement complet</string>
     <string name="zipCodeNumErrorStr">Veuillez insérer 5 chiffres</string>
     <string name="backPressStr">Êtes-vous sûr de vouloir quitter?</string>
     <string name="locationSettingsStr">Veuillez vérifier les paramètres de localisation</string>
+    <string name="ibrahimHumidityStr">Humidité:</string>
 
     <string-array name="courses_array">
         <item>Netowrking for Sftwr Dvlprs</item>
