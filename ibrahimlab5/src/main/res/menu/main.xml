@@ -18,6 +18,6 @@
         android:id="@+id/action_sms"
         android:orderInCategory="100"
         android:icon="@drawable/ic_baseline_sms_24"
-        android:title="@string/action_location"
+        android:title="@string/action_sms"
         app:showAsAction="always" />
 </menu>

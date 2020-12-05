@@ -11,6 +11,7 @@
     <string name="nav_header_desc">En-tête de navigation</string>
     <string name="action_help">Aidez-moi</string>
     <string name="action_location">Emplacement</string>
+    <string name="action_sms">SMS</string>
 
     <string name="menu_home">Accueil</string>
     <string name="menu_ibrahim">Ibrahim</string>
@@ -43,6 +44,7 @@
     <string name="downloadCompleteStr">Téléchargement complet</string>
     <string name="zipCodeNumErrorStr">Veuillez insérer 5 chiffres</string>
     <string name="backPressStr">Êtes-vous sûr de vouloir quitter?</string>
+    <string name="locationSettingsStr">Veuillez vérifier les paramètres de localisation</string>
 
     <string-array name="courses_array">
         <item>Netowrking for Sftwr Dvlprs</item>

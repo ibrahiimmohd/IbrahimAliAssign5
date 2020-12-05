@@ -118,7 +118,7 @@ public class IbrahimActivity extends AppCompatActivity {
                 if (checkPermission && mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
                     getLastLocation();
                 }else{
-                    Toast.makeText(this, "Please check location settings", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.locationSettingsStr, Toast.LENGTH_SHORT).show();
                 }
                 return true;
             case R.id.action_sms:
@@ -242,6 +242,8 @@ public class IbrahimActivity extends AppCompatActivity {
                     double longitude = locationGPS.getLongitude();
                     Snackbar.make(drawer,String.format("Latitude: %.4f & Longitude: %.4f", latitude, longitude), Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), R.string.locationSettingsStr, Toast.LENGTH_SHORT).show();
                 }
             }
         }catch (Exception e){
