@@ -84,12 +84,18 @@ public class IbHome extends Fragment implements AdapterView.OnItemSelectedListen
             case "green":
                 root.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.green));
                 break;
+            default:
+                root.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.green));
+                break;
         }
 
-        timeTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
-        dateTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
-        fullnameTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
-        studentNumTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+        if(!font_selection.equals("empty")){
+            timeTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+            dateTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+            fullnameTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+            studentNumTv.setTextSize(TypedValue.COMPLEX_UNIT_SP,Integer.parseInt(font_selection));
+        }
+
 
         if(portrait_selection){
             getActivity().setRequestedOrientation(
@@ -104,6 +110,9 @@ public class IbHome extends Fragment implements AdapterView.OnItemSelectedListen
                 hourFormat = "hh:mm:ss a";
                 break;
             case "24":
+                hourFormat = "HH:mm:ss";
+                break;
+            default:
                 hourFormat = "HH:mm:ss";
                 break;
         }
