@@ -1,4 +1,4 @@
-#Name: Ibrahim Ali, StudentId: 301022172
+# Name: Ibrahim Ali, StudentId: 301022172
 # GitHub Repo Link: https://github.com/ibrahiimmohd/IbrahimAliAssign5.git
 
 This is Assignment 5 for Android class
@@ -28,7 +28,7 @@ This app is called ExploreServicesApp
 
 *When the button click, it would retrieve data from an api and display accordingly
 
-# Settings Page
+##  Settings Page
 
 -Allows you to select background color
 -Allows you to select font size
@@ -37,7 +37,7 @@ This app is called ExploreServicesApp
 -You can save preferences for the next visit
 
 
-# Action Bar
+##  Action Bar
 
 -You can click for help and you will be redirect to Centennial College website
 -Click SMS icon and you will be able to send an SMS
